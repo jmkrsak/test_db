@@ -30,6 +30,10 @@ SELECT * FROM employees
         ORDER BY emp_no;
 
 SELECT * FROM employees
+    WHERE last_name LIKE '%e%'
+        ORDER BY emp_no DESC;
+
+SELECT * FROM employees
     WHERE last_name LIKE '%q%';
 
 SELECT * FROM employees
