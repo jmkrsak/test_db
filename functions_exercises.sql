@@ -52,8 +52,9 @@ SELECT * FROM employees
         AND day(birth_date) = 25
             ORDER BY birth_date, hire_date DESC;
 
-SELECT * FROM employees
-    WHERE year(hire_date) BETWEEN 1990 AND 1999
-        AND month(birth_date) = 12
-        AND day(birth_date) = 25
-            ORDER BY birth_date, hire_date DESC;
+SELECT datediff(CURDATE(), hire_date)
+    FROM employees
+        WHERE year(hire_date) BETWEEN 1990 AND 1999
+            AND month(birth_date) = 12
+            AND day(birth_date) = 25
+                ORDER BY birth_date, hire_date DESC;
