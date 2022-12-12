@@ -38,12 +38,25 @@ SELECT d.dept_name
     s.salary
     AS Salary
 FROM employees as e
-    JOIN dept_manager as de
-        ON de.emp_no = e.emp_no
+    JOIN dept_manager as dm
+        ON dm.emp_no = e.emp_no
     JOIN departments as d
-        ON d.dept_no = de.dept_no
-    LEFT JOIN salaries as s
+        ON d.dept_no = dm.dept_no
+    JOIN salaries as s
         ON s.emp_no = e.emp_no
 WHERE year(s.to_date) = 9999;
 
-
+SELECT CONCAT(e.first_name, ' ', e.last_name)
+    AS Employee,
+    d.dept_name
+    AS Department_Name,
+    CONCAT(e.first_name, ' ', e.last_name)
+    AS Manager
+FROM employees as e
+    JOIN dept_emp as de
+        ON de.emp_no = e.emp_no
+    JOIN departments as d
+        ON d.dept_no = de.dept_no
+    JOIN dept_manager as dm
+        ON dm.emp_no = e.emp_no
+WHERE year(de.to_date) = 9999;
