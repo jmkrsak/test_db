@@ -57,6 +57,7 @@ FROM employees as e
         ON de.emp_no = e.emp_no
     JOIN departments as d
         ON d.dept_no = de.dept_no
-    JOIN dept_manager as dm
-        ON dm.emp_no = e.emp_no
+    WHERE
 WHERE year(de.to_date) = 9999;
+
+
