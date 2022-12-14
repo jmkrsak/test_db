@@ -5,7 +5,6 @@ SELECT * FROM employees WHERE first_name IN (
     'Vidya',
     'Maya'
     )
-
     ORDER BY last_name, first_name;
 
 SELECT * FROM employees WHERE (
